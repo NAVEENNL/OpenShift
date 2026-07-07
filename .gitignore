@@ -1,0 +1,7 @@
+.vs/
+## Visual Studio Temporary Files
+.vs/
+BaseIntermediateOutputPath/
+BenchmarkDotNet.Artifacts/
+obj/
+bin/
