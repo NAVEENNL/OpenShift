@@ -14,8 +14,8 @@ WORKDIR /src
 COPY . .
 RUN dotnet restore "ConsoleDb2DotNet8App.csproj"
 #COPY . .
-WORKDIR "/src/."
-RUN dotnet build "./ConsoleDb2DotNet8App.csproj" -c $BUILD_CONFIGURATION -o /app/build
+WORKDIR "/src/ConsoleDb2DotNet8App/"
+RUN dotnet build "ConsoleDb2DotNet8App.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 # This stage is used to publish the service project to be copied to the final stage
 FROM build AS publish
