@@ -10,9 +10,10 @@ WORKDIR /app
 FROM mcr.microsoft.com/dotnet/sdk:8.0-bookworm-slim AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["ConsoleDb2DotNet8App.csproj", "."]
-RUN dotnet restore "./ConsoleDb2DotNet8App.csproj"
+#COPY ["ConsoleDb2DotNet8App.csproj", "."]
 COPY . .
+RUN dotnet restore "ConsoleDb2DotNet8App.csproj"
+#COPY . .
 WORKDIR "/src/."
 RUN dotnet build "ConsoleDb2DotNet8App.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
